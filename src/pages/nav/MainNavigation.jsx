@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { siteName } from "../../config/settings";
 
 export default function MainNavigation(props) {
@@ -15,20 +16,20 @@ export default function MainNavigation(props) {
           <div className="flex space-x-7">
             <div>
               {/* <!-- Website Logo --> */}
-              <a
-                href="/"
+              <Link
+                to="/"
                 title="Artists"
                 className="flex items-center py-4 px-2"
               >
                 <h1 style={{ fontWeight: "bold", fontSize: "32px" }}>
                   <span className="text-gray-300">{siteName}</span>
                 </h1>
-              </a>
+              </Link>
             </div>
             {/* <!-- Primary Navbar items --> */}
             <div className="hidden md:flex items-center space-x-2">
-              <a
-                href="/artists"
+              <Link
+                to="/artists"
                 className={`py-4 px-2 font-semibold ${
                   props.page === "artists"
                     ? "text-gray-200"
@@ -36,9 +37,9 @@ export default function MainNavigation(props) {
                 }`}
               >
                 Artists
-              </a>
-              <a
-                href="/auctions"
+              </Link>
+              <Link
+                to="/auctions"
                 title="Auctions"
                 className={`py-4 px-2 font-semibold ${
                   props.page === "auctions"
@@ -47,9 +48,9 @@ export default function MainNavigation(props) {
                 }`}
               >
                 Auctions
-              </a>
-              <a
-                href="/listings"
+              </Link>
+              <Link
+                to="/listings"
                 title="Listings"
                 className={`py-4 px-2 font-semibold ${
                   props.page === "listings"
@@ -58,7 +59,7 @@ export default function MainNavigation(props) {
                 }`}
               >
                 Listings
-              </a>
+              </Link>
             </div>
           </div>
           {/* <!-- Mobile menu button --> */}
@@ -89,8 +90,8 @@ export default function MainNavigation(props) {
       <div className={menuOpen ? "px-3" : "hidden"}>
         <ul className="">
           <li className="active">
-            <a
-              href="/artists"
+            <Link
+              to="/artists"
               className={`block text-sm py-4 px-2 font-semibold ${
                 props.page === "artists"
                   ? "text-black bg-gray-500"
@@ -98,9 +99,9 @@ export default function MainNavigation(props) {
               }`}
             >
               Artists
-            </a>
-            <a
-              href="/auctions"
+            </Link>
+            <Link
+              to="/auctions"
               title="Auctions"
               className={`block text-sm py-4 px-2 font-semibold ${
                 props.page === "auctions"
@@ -109,9 +110,9 @@ export default function MainNavigation(props) {
               }`}
             >
               Auctions
-            </a>
-            <a
-              href="/listings"
+            </Link>
+            <Link
+              to="/listings"
               title="Listings"
               className={`block text-sm py-4 px-2 font-semibold ${
                 props.page === "listings"
@@ -120,7 +121,7 @@ export default function MainNavigation(props) {
               }`}
             >
               Listings
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
